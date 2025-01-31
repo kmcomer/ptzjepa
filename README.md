@@ -5,5 +5,5 @@
 To build the PTZJEPA, you need to have Docker installed. Then, you can run the following command:
 
 ```bash
-sudo docker buildx build --platform=linux/amd64 -t dariodematties/ptzjepa -f Dockerfile --push .
+sudo docker buildx build --platform=linux/amd64 -t your_dockerhub_username/ptzjepa -f Dockerfile --push .
 ```
