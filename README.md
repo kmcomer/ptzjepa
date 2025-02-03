@@ -22,4 +22,25 @@ To run the PTZJEPA container on a Dell Blade Server, you can run the following c
 sudo docker run --gpus all --privileged -it -v /path/to/jepa/persistece/folder:/persistence -v /path/to/ptzjepa:/app your_dockerhub_username/ptzjepa:latest bash
 ```
 
+The command above will run the container in bash mode.
+
+To run the PTZJEPA in the container, you can run the following command:
+
+```bash
+sudo docker run --privileged --rm --gpus all -v /path/to/jepa/persistece/folder:/persistence -v /path/to/ptzjepa:/app your_dockerhub_username/ptzjepa:latest python /app/main.py -tp -cb 0 -it 20 -mv 20 -un camera_username -pw camera_password -ip xxx.xxx.xx.xx -rm lifelong --track_all -ki --debug 2>&1 | tee /path/to/log.out
+```
+
 where `/path/to/jepa/persistece/folder` is the path to the folder where the JEPA persistence files are stored and `/path/to/ptzjepa` is the path to the PTZJEPA folder.
+
+The persistence folder should contain the following structure:
+
+```
+.
+./collected_imgs
+./collected_commands
+./collected_positions
+./collected_embeds
+./world_models
+./agents
+./progress_model_names.txt
+```
