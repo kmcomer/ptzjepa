@@ -10,7 +10,7 @@ FROM python:3.10.14-bullseye
 
 #RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y \
-    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2
+    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2 sshpass
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
