@@ -446,11 +446,14 @@ class SSHFSMounter_3:
             '-o', 'StrictHostKeyChecking=no',
             '-o', 'UserKnownHostsFile=/dev/null',
             '-o', 'debug',
+            '-o', 'reconnect',
+            '-o', 'ServerAliveInterval=15',
+            '-o', 'ServerAliveCountMax=3',
             f'{self.host_username}@{self.host_ip}:{self.host_data_directory}',
             self.local_data_directory
         ]
         
-        if self.run_command(mount_command, timeout=60):
+        if self.run_command(mount_command, timeout=120):
             print("Mount command completed. Verifying mount...")
             return self.verify_mount()
         else:
