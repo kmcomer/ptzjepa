@@ -10,7 +10,7 @@ FROM python:3.10.14-bullseye
 
 #RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y \
-    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2 sshpass
+    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2 sshpass openssh-client
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
@@ -23,6 +23,10 @@ RUN pip install h5py
 RUN pip install "numpy<2" 
 # native pyymal version is too old with the python
 # RUN pip install --ignore-installed PyYAML
+
+# Generate SSH keys for passwordless authentication
+RUN mkdir -p /root/.ssh && chmod 700 /root/.ssh && \
+	ssh-keygen -t rsa -b 4096 -f /root/.ssh/id_rsa -q -N ""
 
 # COPY . .
 
