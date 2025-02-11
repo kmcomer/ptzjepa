@@ -112,6 +112,10 @@ dreamer:
   #number_of_dreams: 15
   number_of_dreams: 20
   dream_length: 10
+redis:
+  host: 130.202.23.67
+  port: 6379
+  password: your_strong_password
 action:
   noop:
   - 0.0

@@ -178,6 +178,28 @@ def get_argparser():
         action="store_true",
         help="Whether to run in distributed mode training",
     )
+    parser.add_argument(
+        "-dist_ip",
+        "--distributed_ip",
+        type=str,
+        default="130.202.23.67",
+        help="The ip of the distributed server.",
+    )
+    parser.add_argument(
+        "-dist_username",
+        "--distributed_username",
+        type=str,
+        default="waggle",
+        help="The username of the distributed server.",
+    )
+    parser.add_argument(
+        "-dist_host_directory",
+        "--distributed_host_directory",
+        type=str,
+        default="/home/waggle/world_models",
+        help="The directory of the distributed server.",
+    )
+
 
     return parser
 
@@ -190,9 +212,9 @@ def main():
 
     if args.distributed:
         mounter = SSHFSMounter(
-            host_username='waggle',
-            host_ip='130.202.23.67',
-            host_data_directory='/home/waggle/dario/world_models',
+            host_username=args.distributed_username,
+            host_ip=args.distributed_ip,
+            host_data_directory=args.distributed_host_directory,
             local_data_directory='/persistence/world_models/',
             identity_file='/root/.ssh/id_rsa'
         )

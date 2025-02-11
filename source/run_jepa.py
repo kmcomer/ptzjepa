@@ -533,9 +533,11 @@ def world_model(args, resume_preempt=False):
     # -- MEMORY
     memory_models = args['memory']['models']
 
-    redis_host='130.202.23.67'
-    redis_port='6379'
-    redis_password='your_strong_password'
+    # -- REDIS
+    redis_host = args['redis']['host']
+    redis_port = args['redis']['port']
+    redis_password = args['redis']['password']
+
     num_lockers=memory_models
     time.sleep(10)
     locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers)
@@ -1049,10 +1051,11 @@ def dreamer(args, resume_preempt=False):
     memory_dreams = args['memory']['dreams']
     memory_models = args['memory']['models']
 
+    # -- REDIS
+    redis_host = args['redis']['host']
+    redis_port = args['redis']['port']
+    redis_password = args['redis']['password']
 
-    redis_host='130.202.23.67'
-    redis_port='6379'
-    redis_password='your_strong_password'
     num_lockers=memory_models
     time.sleep(10)
     locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers)
