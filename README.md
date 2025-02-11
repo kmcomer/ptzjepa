@@ -1,5 +1,15 @@
 # Pan Tilt Zoom Joint Embedding Predictive Architecture (PTZJEPA)
 
+## Overview
+The PTZJEPA is a Pan Tilt Zoom Joint Embedding Predictive Architecture that uses a joint embedding predictive architecture (JEPA) to learn a world model of the environment (the camera view) and a reinforcement learning agent to control the camera.
+The joint embedding predictive architecture (JEPA) is a neural network that learns to predict the next internal representation (embedding vector) o the next image given the current image, the current camera position and the current action of the camera. This is basically a world model of the environment (the camera view) the learns to predict the camera dynamics.
+This is biologically plausible in the sense that motor commands (actions to control the camera) play the role of predictions in biological systems (such as mammals) and the world model (the JEPA) learns to predict the next internal representation (embedding vector) of the next image given the current image, the current camera position and the current action of the camera.
+
+The Reinforcement learning agent is trained with the world model (the JEPA) and learns to move the camera to locations which are difficult for the world model to predict. The agent learns to move the camera to locations in which the world model has poor performance.
+
+The software in this repository is designed to train several edge agents running distributedly in different camera locations.
+The federated learning aspect of the PTZJEPA allows the agents to learn from each other by sharing their world models and their experiences. This is done by using a redis server to synchronize the access to the world models and the experiences of the agents.
+
 ## Buiding the PTZJEPA
 
 To build the PTZJEPA and push it to dockerhub, you need to have Docker installed in your local machine. Then, you can run the following command:
