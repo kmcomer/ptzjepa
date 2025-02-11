@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 class MultiLockerSystem:
-    def __init__(self, redis_host, redis_port, redis_password, locker_prefix, num_lockers, expire_in_sec=20000):
+    def __init__(self, redis_host, redis_port, redis_password, locker_prefix, num_lockers, expire_in_sec=1800):
         self.redis = redis.Redis(host=redis_host, port=redis_port, password=redis_password, db=0)
         self.locker_prefix = locker_prefix
         self.num_lockers = num_lockers
@@ -48,345 +48,14 @@ class MultiLockerSystem:
 
 
 
-
-
-
 class SSHFSMounter:
-    def __init__(self, host_username, host_ip, host_data_directory, local_data_directory, password):
+    def __init__(self, host_username, host_ip, host_data_directory, local_data_directory, identity_file="/root/.ssh/id_rsa"):
         self.host_username = host_username
         self.host_ip = host_ip
         self.host_data_directory = host_data_directory
         self.local_data_directory = local_data_directory
-        self.password = password
-
-    def mount(self):
-        Path(self.local_data_directory).mkdir(parents=True, exist_ok=True)
-
-        mount_command = [
-            'sshfs', '-v',
-            '-o', f'password_stdin',
-            '-o', 'StrictHostKeyChecking=no',
-            '-o', 'UserKnownHostsFile=/dev/null',
-            '-o', 'debug',
-            f'{self.host_username}@{self.host_ip}:{self.host_data_directory}',
-            self.local_data_directory
-        ]
-        
-        print(f"Executing command: {' '.join(mount_command)}")
-        
-        process = subprocess.Popen(mount_command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        stdout, stderr = process.communicate(input=self.password)
-        
-        print(f"STDOUT: {stdout}")
-        print(f"STDERR: {stderr}")
-        
-        if process.returncode != 0:
-            print(f"Mount failed. Return code: {process.returncode}")
-            print(f"Error: {stderr}")
-            self.check_ssh_connection()
-        else:
-            print("Mount command completed. Verifying mount...")
-            self.verify_mount()
-
-    def check_ssh_connection(self):
-        print("Checking SSH connection...")
-        ssh_command = ['ssh', '-v', '-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=no', f'{self.host_username}@{self.host_ip}', 'echo', 'SSH connection successful']
-        
-        process = subprocess.Popen(ssh_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        stdout, stderr = process.communicate()
-        
-        print(f"SSH STDOUT: {stdout}")
-        print(f"SSH STDERR: {stderr}")
-        
-        if process.returncode == 0:
-            print("SSH connection successful")
-        else:
-            print(f"SSH connection failed. Return code: {process.returncode}")
-
-    def verify_mount(self):
-        try:
-            result = subprocess.run(['mountpoint', '-q', self.local_data_directory], check=True)
-            print(f"Mount verified successfully.")
-        except subprocess.CalledProcessError:
-            print(f"Mount verification failed. The directory is not mounted.")
-        
-        try:
-            contents = os.listdir(self.local_data_directory)
-            print(f"Contents of {self.local_data_directory}:")
-            for item in contents:
-                print(f" - {item}")
-        except Exception as e:
-            print(f"Failed to list directory contents: {e}")
-
-    def unmount(self):
-        unmount_command = ['fusermount', '-u', '-v', self.local_data_directory]
-        result = subprocess.run(unmount_command, capture_output=True, text=True)
-        print(f"Unmount STDOUT: {result.stdout}")
-        print(f"Unmount STDERR: {result.stderr}")
-        if result.returncode != 0:
-            print(f"Unmount failed. Return code: {result.returncode}")
-            self.verify_mount()
-        else:
-            print("Unmount successful")
-
-    def create_test_file(self, filename):
-        path = Path(self.local_data_directory) / filename
-        try:
-            path.touch()
-            print(f"Created test file: {path}")
-            if path.exists():
-                print(f"File {filename} exists in the mounted directory.")
-            else:
-                print(f"File {filename} does not exist in the mounted directory.")
-        except Exception as e:
-            print(f"Failed to create test file: {e}")
-
-
-
-
-
-
-
-class SSHFSMounter_1:
-    def __init__(self, host_username, host_ip, host_data_directory, local_data_directory, password):
-        self.host_username = host_username
-        self.host_ip = host_ip
-        self.host_data_directory = host_data_directory
-        self.local_data_directory = local_data_directory
-        self.password = password
-
-    def mount(self):
-        print("Starting mount process...")
-        Path(self.local_data_directory).mkdir(parents=True, exist_ok=True)
-
-        mount_command = [
-            'sshfs', '-v',
-            '-o', f'password_stdin',
-            '-o', 'StrictHostKeyChecking=no',
-            '-o', 'UserKnownHostsFile=/dev/null',
-            '-o', 'debug',
-            f'{self.host_username}@{self.host_ip}:{self.host_data_directory}',
-            self.local_data_directory
-        ]
-        
-        print(f"Executing command: {' '.join(mount_command)}")
-        
-        try:
-            process = subprocess.Popen(mount_command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            
-            def timeout_handler(signum, frame):
-                print("Mount process timed out")
-                process.kill()
-                raise TimeoutError("Mount process timed out")
-
-            signal.signal(signal.SIGALRM, timeout_handler)
-            signal.alarm(30)  # Set a 30-second timeout
-
-            print("Sending password...")
-            stdout, stderr = process.communicate(input=self.password, timeout=30)
-            
-            signal.alarm(0)  # Cancel the alarm
-
-            print(f"STDOUT: {stdout}")
-            print(f"STDERR: {stderr}")
-            
-            if process.returncode != 0:
-                print(f"Mount failed. Return code: {process.returncode}")
-                print(f"Error: {stderr}")
-                self.check_ssh_connection()
-            else:
-                print("Mount command completed. Verifying mount...")
-                self.verify_mount()
-        except subprocess.TimeoutExpired:
-            print("Mount process timed out")
-            process.kill()
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    def check_ssh_connection(self):
-        print("Checking SSH connection...")
-        ssh_command = ['ssh', '-v', '-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=no', f'{self.host_username}@{self.host_ip}', 'echo', 'SSH connection successful']
-        
-        try:
-            process = subprocess.Popen(ssh_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            stdout, stderr = process.communicate(timeout=10)
-            
-            print(f"SSH STDOUT: {stdout}")
-            print(f"SSH STDERR: {stderr}")
-            
-            if process.returncode == 0:
-                print("SSH connection successful")
-            else:
-                print(f"SSH connection failed. Return code: {process.returncode}")
-        except subprocess.TimeoutExpired:
-            print("SSH connection timed out")
-            process.kill()
-        except Exception as e:
-            print(f"An error occurred during SSH check: {e}")
-
-    def verify_mount(self):
-        try:
-            result = subprocess.run(['mountpoint', '-q', self.local_data_directory], check=True, timeout=5)
-            print(f"Mount verified successfully.")
-        except subprocess.CalledProcessError:
-            print(f"Mount verification failed. The directory is not mounted.")
-        except subprocess.TimeoutExpired:
-            print("Mount verification timed out")
-        
-        try:
-            contents = os.listdir(self.local_data_directory)
-            print(f"Contents of {self.local_data_directory}:")
-            for item in contents:
-                print(f" - {item}")
-        except Exception as e:
-            print(f"Failed to list directory contents: {e}")
-
-    def unmount(self):
-        print("Starting unmount process...")
-        unmount_command = ['fusermount', '-u', '-v', self.local_data_directory]
-        try:
-            result = subprocess.run(unmount_command, capture_output=True, text=True, timeout=10)
-            print(f"Unmount STDOUT: {result.stdout}")
-            print(f"Unmount STDERR: {result.stderr}")
-            if result.returncode != 0:
-                print(f"Unmount failed. Return code: {result.returncode}")
-                self.verify_mount()
-            else:
-                print("Unmount successful")
-        except subprocess.TimeoutExpired:
-            print("Unmount process timed out")
-        except Exception as e:
-            print(f"An error occurred during unmount: {e}")
-
-
-
-
-
-
-
-
-
-class SSHFSMounter_2:
-    def __init__(self, host_username, host_ip, host_data_directory, local_data_directory, password):
-        self.host_username = host_username
-        self.host_ip = host_ip
-        self.host_data_directory = host_data_directory
-        self.local_data_directory = local_data_directory
-        self.password = password
-
-    def mount(self):
-        print("Starting mount process...")
-        Path(self.local_data_directory).mkdir(parents=True, exist_ok=True)
-
-        mount_command = [
-            'sshpass', '-p', self.password,
-            'sshfs', '-v',
-            '-o', 'StrictHostKeyChecking=no',
-            '-o', 'UserKnownHostsFile=/dev/null',
-            '-o', 'debug',
-            f'{self.host_username}@{self.host_ip}:{self.host_data_directory}',
-            self.local_data_directory
-        ]
-        
-        print(f"Executing command: {' '.join(mount_command)}")
-        
-        try:
-            process = subprocess.Popen(mount_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            
-            def timeout_handler(signum, frame):
-                print("Mount process timed out")
-                process.kill()
-                raise TimeoutError("Mount process timed out")
-
-            signal.signal(signal.SIGALRM, timeout_handler)
-            signal.alarm(30)  # Set a 30-second timeout
-
-            stdout, stderr = process.communicate(timeout=30)
-            
-            signal.alarm(0)  # Cancel the alarm
-
-            print(f"STDOUT: {stdout}")
-            print(f"STDERR: {stderr}")
-            
-            if process.returncode != 0:
-                print(f"Mount failed. Return code: {process.returncode}")
-                print(f"Error: {stderr}")
-                self.check_ssh_connection()
-            else:
-                print("Mount command completed. Verifying mount...")
-                self.verify_mount()
-        except subprocess.TimeoutExpired:
-            print("Mount process timed out")
-            process.kill()
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    def check_ssh_connection(self):
-        print("Checking SSH connection...")
-        ssh_command = ['sshpass', '-p', self.password, 'ssh', '-v', '-o', 'StrictHostKeyChecking=no', f'{self.host_username}@{self.host_ip}', 'echo', 'SSH connection successful']
-        
-        try:
-            process = subprocess.Popen(ssh_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-            stdout, stderr = process.communicate(timeout=10)
-            
-            print(f"SSH STDOUT: {stdout}")
-            print(f"SSH STDERR: {stderr}")
-            
-            if process.returncode == 0:
-                print("SSH connection successful")
-            else:
-                print(f"SSH connection failed. Return code: {process.returncode}")
-        except subprocess.TimeoutExpired:
-            print("SSH connection timed out")
-            process.kill()
-        except Exception as e:
-            print(f"An error occurred during SSH check: {e}")
-
-    def verify_mount(self):
-        try:
-            result = subprocess.run(['mountpoint', '-q', self.local_data_directory], check=True, timeout=5)
-            print(f"Mount verified successfully.")
-        except subprocess.CalledProcessError:
-            print(f"Mount verification failed. The directory is not mounted.")
-        except subprocess.TimeoutExpired:
-            print("Mount verification timed out")
-        
-        try:
-            contents = os.listdir(self.local_data_directory)
-            print(f"Contents of {self.local_data_directory}:")
-            for item in contents:
-                print(f" - {item}")
-        except Exception as e:
-            print(f"Failed to list directory contents: {e}")
-
-    def unmount(self):
-        print("Starting unmount process...")
-        unmount_command = ['fusermount', '-u', '-v', self.local_data_directory]
-        try:
-            result = subprocess.run(unmount_command, capture_output=True, text=True, timeout=10)
-            print(f"Unmount STDOUT: {result.stdout}")
-            print(f"Unmount STDERR: {result.stderr}")
-            if result.returncode != 0:
-                print(f"Unmount failed. Return code: {result.returncode}")
-                self.verify_mount()
-            else:
-                print("Unmount successful")
-        except subprocess.TimeoutExpired:
-            print("Unmount process timed out")
-        except Exception as e:
-            print(f"An error occurred during unmount: {e}")
-
-
-
-
-
-class SSHFSMounter_3:
-    def __init__(self, host_username, host_ip, host_data_directory, local_data_directory, password):
-        self.host_username = host_username
-        self.host_ip = host_ip
-        self.host_data_directory = host_data_directory
-        self.local_data_directory = local_data_directory
-        self.password = password
+        self.identity_file = identity_file
+        self.mount_proc = None  # Will store the sshfs process
 
     def run_command(self, command, timeout=30):
         print(f"Executing command: {' '.join(command)}")
@@ -401,14 +70,21 @@ class SSHFSMounter_3:
 
     def check_ssh(self):
         print("Checking SSH connection...")
-        command = ['sshpass', '-p', self.password, 'ssh', '-o', 'StrictHostKeyChecking=no', 
-                   f'{self.host_username}@{self.host_ip}', 'echo', 'SSH connection successful']
+        command = [
+            'ssh', '-i', self.identity_file,
+            '-o', 'StrictHostKeyChecking=no',
+            f'{self.host_username}@{self.host_ip}', 'echo', 'SSH connection successful'
+        ]
         return self.run_command(command)
 
     def check_sftp(self):
         print("Checking SFTP connection...")
-        command = ['sshpass', '-p', self.password, 'sftp', '-o', 'StrictHostKeyChecking=no', 
-                   f'{self.host_username}@{self.host_ip}:/']
+        command = [
+            'sftp',
+            '-o', f'IdentityFile={self.identity_file}',
+            '-o', 'StrictHostKeyChecking=no',
+            f'{self.host_username}@{self.host_ip}:/'
+        ]
         return self.run_command(command, timeout=10)
 
     def check_fuse(self):
@@ -421,7 +97,7 @@ class SSHFSMounter_3:
 
     def mount(self):
         print("Starting mount process...")
-        
+
         if not self.check_ssh():
             print("SSH connection failed. Cannot proceed with mount.")
             return False
@@ -439,42 +115,51 @@ class SSHFSMounter_3:
             return False
 
         Path(self.local_data_directory).mkdir(parents=True, exist_ok=True)
+        os.chmod(self.local_data_directory, 0o777)
 
         mount_command = [
-            'sshpass', '-p', self.password,
-            'sshfs', '-v',
+            'sshfs',
             '-o', 'StrictHostKeyChecking=no',
             '-o', 'UserKnownHostsFile=/dev/null',
-            '-o', 'debug',
-            '-o', 'reconnect',
-            '-o', 'ServerAliveInterval=15',
-            '-o', 'ServerAliveCountMax=3',
+            '-o', f'IdentityFile={self.identity_file}',
             f'{self.host_username}@{self.host_ip}:{self.host_data_directory}',
             self.local_data_directory
         ]
-        
-        if self.run_command(mount_command, timeout=120):
-            print("Mount command completed. Verifying mount...")
-            return self.verify_mount()
+
+        print("Executing sshfs mount command in background...")
+        # Launch sshfs in the background
+        proc = subprocess.Popen(mount_command)
+        # Wait a few seconds for the mount to be established
+        time.sleep(5)
+        if self.verify_mount():
+            print("Mount verified successfully.")
+            self.mount_proc = proc  # Save the process handle for later unmounting
+            return True
         else:
-            print("Mount command failed.")
+            print("Mount verification failed, terminating sshfs process.")
+            proc.terminate()
             return False
 
     def verify_mount(self):
         try:
-            result = subprocess.run(['mountpoint', '-q', self.local_data_directory], check=True, timeout=5)
-            print(f"Mount verified successfully.")
+            subprocess.run(['mountpoint', '-q', self.local_data_directory], check=True, timeout=5)
+            print("Mount verified successfully.")
             return True
         except subprocess.CalledProcessError:
-            print(f"Mount verification failed. The directory is not mounted.")
+            print("Mount verification failed. The directory is not mounted.")
         except subprocess.TimeoutExpired:
             print("Mount verification timed out")
         return False
 
     def unmount(self):
         print("Starting unmount process...")
-        unmount_command = ['fusermount', '-u', '-v', self.local_data_directory]
+        unmount_command = ['fusermount', '-u', self.local_data_directory]
+        # unmount_command = ['fusermount', '-u', '-v', self.local_data_directory]
         if self.run_command(unmount_command):
             print("Unmount successful")
+            # Optionally, terminate the sshfs process if it’s still running
+            if self.mount_proc is not None:
+                self.mount_proc.terminate()
+                self.mount_proc = None
         else:
             print("Unmount failed")

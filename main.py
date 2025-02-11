@@ -10,7 +10,7 @@ from source.prepare_dataset import get_images_from_storage, prepare_images, oper
 from source.run_jepa import run as run_jepa
 from source.run_rl import run as run_rl
 from source.env_interaction import run as env_inter
-from source.utils.redis_cli import SSHFSMounter, SSHFSMounter_1, SSHFSMounter_2, SSHFSMounter_3
+from source.utils.redis_cli import SSHFSMounter
 
 
 logger = logging.getLogger(__name__)
@@ -188,63 +188,19 @@ def main():
     logging.basicConfig(level=log_level)
     os.environ["CUDA_VISIBLE_DEVICES"] = str(0)
 
-    #host_username = 'waggle'
-    #host_ip = '130.202.23.67' 
-    #host_data_directory = '/home/waggle/dario/world_models'
-    #local_data_directory = '/persistence/world_models/'
-    ##local_data_directory = '/home/waggle/dario/JEPA_Persistence/world_models/'
-
     if args.distributed:
-        mounter = SSHFSMounter_3(
+        mounter = SSHFSMounter(
             host_username='waggle',
             host_ip='130.202.23.67',
             host_data_directory='/home/waggle/dario/world_models',
             local_data_directory='/persistence/world_models/',
-            password='why1not2'  # Replace with actual password
+            identity_file='/root/.ssh/id_rsa'
         )
 
-        print('mounter: ', mounter)
-
-        print('---------------------')
-        print('Mounting ...')
-        mounter.mount()
-        print('Mounted!')
-        print('---------------------')
-
-    # mount_command = f'sshfs {host_username}@{host_ip}:{host_data_directory} {local_data_directory}'
-    # print('mount_command: ', mount_command)
-    # subprocess.call(mount_command, shell=True)
-    # print('mounted!')
-    # Do your stuff with mounted folder
-    # unmount_command = f'fusermount -u  {local_data_directory}'
-    # print('unmount_command: ', unmount_command)
-    # subprocess.call(unmount_command, shell=True)
-    # print('unmounted!')
-
-
-
-    #command_args = ['sshfs', f'{host_username}@{host_ip}:{host_data_directory}', f'{local_data_directory}']
-
-    #proc = subprocess.Popen(command_args, 
-                            #stdin=subprocess.PIPE, 
-                            #stdout=subprocess.PIPE, 
-                            #stderr=subprocess.PIPE)
-
-    #proc.stdin.write(b'yes\nwhy1not2\n')
-    ##proc.stdin.flush()
-
-    #stdout, stderr = proc.communicate()
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    #print(stdout)
-    #print(stderr)
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-    #print('--------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-
-
-
+        if mounter.mount():
+            print("Mounted successfully!")
+        else:
+            print("Mount failed!")
 
     if args.run_mode == "train":
         pretraining_wrapper(args)
@@ -258,14 +214,13 @@ def main():
         environment_interaction(args)
     elif args.run_mode == "lifelong":
         lifelong_learning(args)
-
+ 
     logger.info("DONE!")
     if args.distributed:
-        print('---------------------')
-        print('UN-Mounting ...')
-        mounter.unmount()
-        print('UN-Mounted!')
-        print('---------------------')
+        if mounter.unmount():
+            print("Unmounted successfully!")
+        else:
+            print("Unmount failed!")
 
 
 
