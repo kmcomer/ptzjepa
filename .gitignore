@@ -1,6 +1,10 @@
 # VIM created files
 *.swp
-
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.txt
 __pycache__
 tmp
 .ipynb_checkpoints
