@@ -10,6 +10,10 @@ The Reinforcement learning agent is trained with the world model (the JEPA) and 
 The software in this repository is designed to train several edge agents running distributedly in different camera locations.
 The federated learning aspect of the PTZJEPA allows the agents to learn from each other by sharing their world models and their experiences. This is done by using a redis server to synchronize the access to the world models and the experiences of the agents.
 
+This project has been conducted in the context of the [Waggle project](https://www.anl.gov/mcs/waggle-an-open-platform-for-intelligent-attentive-sensors) under the [Argonne National Laboratory](https://www.anl.gov/) and the [Department of Energy](https://www.energy.gov/) (DOE) funding.
+
+Specifically, this project was funded by the [Wildebeest 5G Project](https://www.anl.gov/evs/wildebeest-5g-project), which is a DOE-funded project that aims to develop a 5G-enabled edge computing platform for computation and AI training in the continuum.
+
 ## Buiding the PTZJEPA
 
 To build the PTZJEPA and push it to dockerhub, you need to have Docker installed in your local machine. Then, you can run the following command:
