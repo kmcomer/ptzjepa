@@ -537,10 +537,11 @@ def world_model(args, resume_preempt=False):
     redis_host = args['redis']['host']
     redis_port = args['redis']['port']
     redis_password = args['redis']['password']
+    locker_expiration = args['redis']['locker_expiration']
 
     num_lockers=memory_models
     time.sleep(10)
-    locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers)
+    locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers, expire_in_sec=locker_expiration)
     print('locker_system ', locker_system)
 
     if not os.path.exists(folder):
@@ -1055,10 +1056,11 @@ def dreamer(args, resume_preempt=False):
     redis_host = args['redis']['host']
     redis_port = args['redis']['port']
     redis_password = args['redis']['password']
+    locker_expiration = args['redis']['locker_expiration']
 
     num_lockers=memory_models
     time.sleep(10)
-    locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers)
+    locker_system = MultiLockerSystem(redis_host, redis_port, redis_password, "file_lockers", num_lockers, expire_in_sec=locker_expiration)
     print('locker_system ', locker_system)
 
     
