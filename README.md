@@ -353,6 +353,14 @@ sudo docker run --privileged --rm --gpus all -v /path/to/jepa/persistece/folder:
 
 where `-dist` flag is used to run the PTZJEPA in a federated learning setup.
 
+As the figure above shows, the redis server is used to synchronize the access to the world models folder in the server machine.
+We enable the redis server in the docker container through the following argument change in the `configs/Config.yaml` file:
+
+```yaml
+distributed: true
+```
+
+
 
 ### Redis server configuration
 
