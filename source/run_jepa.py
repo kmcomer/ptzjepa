@@ -566,10 +566,10 @@ def world_model(args, resume_preempt=False):
     wm_dir = persis_dir / "world_models"
     dirnames = [d.name for d in wm_dir.iterdir() if d.is_dir()]
     prog_file = persis_dir / "progress_model_names.txt"
-    if len(dirnames) == 0:
+    if len(dirnames) == 0 or not os.path.exists(prog_file):
         # the Adam model
         model_name = f'wm_00_{model_id:0>2}'
-        initialize_model_info(model_name)
+        initialize_model_info(model_name, overwrite=True)
         parent_model_name = None
         with open(prog_file, "a") as f:
             # to prevent overwrite any other previous training
