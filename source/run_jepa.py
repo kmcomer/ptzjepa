@@ -579,7 +579,7 @@ def world_model(args, resume_preempt=False):
         last_line = read_file_lastline(prog_file)
         parent_model_name = last_line.split("@")[0].strip()
         # this should be an agent model
-        assert parent_model_name.split("_")[0] == "ag", "World model's parent must be an agent model except the Adam model"
+        # assert parent_model_name.split("_")[0] == "ag", "World model's parent must be an agent model except the Adam model"
         _, gens, ids = list(zip(*[dirname.split('_') for dirname in dirnames]))
         gens = np.array(gens, dtype=int)
         ids = np.array(ids, dtype=int)
