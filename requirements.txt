@@ -6,3 +6,4 @@ Pillow
 pyyaml
 opencv-python
 redis
+lxml

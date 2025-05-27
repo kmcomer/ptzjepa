@@ -1,3 +1,31 @@
+deployment:
+  camera:
+    ip: "130.202.23.30"
+    username: "camera" 
+    password: "0Bscura#"
+    brand: 0  # 0 for Hanwha, 1 for Axis
+  
+  operation:
+    run_mode: "lifelong"
+    iterations: 20
+    movements: 20
+    debug: true
+    track_positions: true
+    track_all: true
+    keep_images: true
+    
+  distributed:
+    enabled: true
+    ip: "130.202.23.67"
+    username: "waggle"
+    directory: "/home/waggle/world_models"
+    
+  docker:
+    image: "dariodematties/ptzjepa:latest"
+    persistence_path: "/home/waggle/dario/JEPA_Persistence"
+    app_path: "/home/waggle/dario/ptzjepa"
+    log_path: "/home/waggle/dario/log.out"
+
 data:
   #global_batch_size: 4
   global_batch_size: 32

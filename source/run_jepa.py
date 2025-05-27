@@ -1086,7 +1086,7 @@ def dreamer(args, resume_preempt=False):
     for wm in wm_dir.glob("*"):
         with open(wm / "model_info.yaml", 'r') as f:
             info_dict = yaml.safe_load(f)
-        if info_dict["num_restart"] >= 0:
+        if info_dict is not None and info_dict["num_restart"] >= 0:
             wm_candid.append(wm.name)
  
     ########################################################################

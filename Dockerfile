@@ -10,7 +10,7 @@ FROM python:3.10.14-bullseye
 
 #RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y \
-    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2 sshpass openssh-client
+    ffmpeg libsm6 libxext6 libhdf5-dev redis-tools sshfs libfuse2 sshpass openssh-client mplayer
 
 WORKDIR /app
 COPY requirements.txt requirements.txt
@@ -19,6 +19,10 @@ RUN pip install -r requirements.txt
 RUN pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu116
 RUN pip install pywaggle[all]
 RUN pip install h5py
+
+# Packages for playing video on screens
+RUN pip install -U fiftyone
+
 # fix numpy compatibility issue
 RUN pip install "numpy<2" 
 # native pyymal version is too old with the python

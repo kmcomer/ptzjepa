@@ -177,7 +177,19 @@ def control_ptz(args, params, resume_preempt=False):
     agent_name = random.choice(agents)
     with open(ag_dir / agent_name / "model_info.yaml", "r") as f:
         info_dict = yaml.safe_load(f)
+
+    if info_dict['num_restart'] < 0:
+        # Initialize restart counter if it's negative
+        info_dict['num_restart'] = 0
+        info_dict[f"restart_{info_dict['num_restart']:0>2}"] = {
+            "start_ind": 0,
+            "rew_sum": 0,
+            "target_rew": 0,
+            "num_steps": 0
+        }
+    
     restart_info = info_dict[f"restart_{info_dict['num_restart']:0>2}"]
+    
     world_model_name = restart_info["parent_model"]
     # ----------------------------------------------------------------------- #
     #   Bring world model first
