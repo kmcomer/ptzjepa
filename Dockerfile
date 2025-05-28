@@ -20,10 +20,6 @@ RUN pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 --index-url
 RUN pip install pywaggle[all]
 RUN pip install h5py
 
-# Packages for playing video on screens
-RUN pip install -U fiftyone
-
-
 # fix numpy compatibility issue
 RUN pip install "numpy<2" 
 # native pyymal version is too old with the python
