@@ -1,8 +1,8 @@
 deployment:
   camera:
-    ip: "130.202.23.30"
-    username: "camera" 
-    password: "0Bscura#"
+    ip: IP
+    username: UN
+    password: PW
     brand: 0  # 0 for Hanwha, 1 for Axis
   
   operation:
@@ -16,12 +16,12 @@ deployment:
     
   distributed:
     enabled: true
-    ip: "130.202.23.67"
+    ip: SERVER
     username: "waggle"
     directory: "/home/waggle/world_models"
     
   docker:
-    image: "dariodematties/ptzjepa:latest"
+    image: "kmcomer/ptzjepa:latest"
     persistence_path: "/home/waggle/dario/JEPA_Persistence"
     app_path: "/home/waggle/dario/ptzjepa"
     log_path: "/home/waggle/dario/log.out"
