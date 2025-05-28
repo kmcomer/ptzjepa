@@ -1,0 +1,209 @@
+)
+    (7): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): MLP(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (8): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): MLP(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (9): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): MLP(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (10): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): MLP(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+    (11): Block(
+      (norm1): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=192, out_features=576, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=192, out_features=192, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+      (mlp): MLP(
+        (fc1): Linear(in_features=192, out_features=768, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=768, out_features=192, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): LayerNorm((192,), eps=1e-06, elementwise_affine=True)
+)
+INFO:source.run_rl:PREPARING DATA...
+,
+                               'zoom_out': [0.0, 0.0, -0.1]}},
+    'data': {   'batch_size': 4,
+                'color_jitter_strength': 0.0,
+                'crop_scale': [0.98, 1.0],
+                'crop_size': 224,
+                'global_batch_size': 32,
+                'image_folder': 'imagenet_full_size/061417/',
+                'num_workers': 10,
+                'pin_mem': True,
+                'rl_batch_size': 64,
+                'root_path': '$replace_this_with_absolute_path_to_your_datasets_directory',
+                'use_color_distortion': False,
+                'use_gaussian_blur': False,
+                'use_horizontal_flip': False},
+    'deployment': {   'camera': {   'brand': 0,
+                                    'ip': '130.202.23.61',
+                                    'password': '0Bscura#',
+                                    'username': 'camera'},
+                      'distributed': {   'directory': '/home/waggle/world_models',
+                                         'enabled': True,
+                                         'ip': '130.202.23.67',
+                                         'username': 'waggle'},
+                      'docker': {   'app_path': '/home/waggle/dario/ptzjepa',
+                                    'image': 'dariodematties/ptzjepa:latest',
+                                    'log_path': '/home/waggle/dario/log.out',
+                                    'persistence_path': '/home/waggle/dario/JEPA_Persistence'},
+                      'operation': {   'debug': True,
+                                       'iterations': 20,
+                                       'keep_images': True,
+                                       'movements': 20,
+                                       'run_mode': 'lifelong',
+                                       'track_all': True,
+                                       'track_positions': True}},
+    'dreamer': {'dream_length': 10, 'number_of_dreams': 20},
+    'logging': {   'agent_folder': '/persistence/agents/',
+                   'dream_folder': '/persistence/dreams/',
+                   'folder': '/persistence/world_models/',
+                   'ownership_folder': '/persistence',
+                   'write_tag': 'jepa'},
+    'mask': {   'allow_overlap': False,
+                'aspect_ratio': [0.75, 1.5],
+                'enc_mask_scale': [0.85, 1.0],
+                'min_keep': 10,
+                'num_enc_masks': 1,
+                'num_pred_masks': 4,
+                'patch_size': 14,
+                'pred_mask_scale': [0.15, 0.2]},
+    'memory': {'dreams': 50, 'memory_models': 10, 'models': 5, 'rl_models': 5},
+    'meta': {   'agent_model_arch': 'vit_tiny',
+                'camera_brand': 0,
+                'copy_data': False,
+                'distributed': True,
+                'load_checkpoint': True,
+                'model_arch': 'vit_tiny',
+                'pred_depth': 12,
+                'pred_emb_dim': 384,
+                'read_checkpoint': None,
+                'use_bfloat16': True},
+    'optimization': {   'TAU': 0.0005,
+                        'ema': [0.85, 1.0],
+                        'epochs': 100,
+                        'final_lr': 1e-06,
+                        'final_weight_decay': 0.4,
+                        'ipe_scale': 1.0,
+                        'lr': 0.0001,
+                        'rl_ema': [0.0005, 5e-05],
+                        'rl_epochs': 100,
+                        'rl_final_lr': 1e-06,
+                        'rl_lr': 0.0001,
+                        'rl_start_lr': 2e-06,
+                        'rl_warmup': 5,
+                        'start_lr': 2e-06,
+                        'warmup': 5,
+                        'weight_decay': 0.04},
+    'plateau': {   'patience': 10,
+                   'rl_patience': 10,
+                   'rl_threshold': 0.01,
+                   'threshold': 0.01,
+                   'wm_patience': 10,
+                   'wm_threshold': 0.01},
+    'redis': {   'host': '130.202.23.67',
+                 'locker_expiration': 36000,
+                 'password': 'your_strong_password',
+                 'port': 6379}}
+log_file  /persistence/agents/ag_00_03/jepa.csv
+save_path  /persistence/agents/ag_00_03/jepa-ep{epoch}.pt
+policy_latest_path  /persistence/agents/ag_00_03/jepa-policy_latest.pt
+target_latest_path  /persistence/agents/ag_00_03/jepa-target_latest.pt
+policy_load_path  /persistence/agents/ag_00_03/jepa-policy_latest.pt
+target_load_path  /persistence/agents/ag_00_03/jepa-target_latest.pt
+Traceback (most recent call last):
+  File "/app/main.py", line 250, in <module>
+    main()
+  File "/app/main.py", line 238, in main
+    lifelong_learning(args)
+  File "/app/main.py", line 66, in lifelong_learning
+    training_complete = run_rl(arguments.fname, "train_agent")
+  File "/app/source/run_rl.py", line 591, in run
+    return agent_model(params)
+  File "/app/source/run_rl.py", line 332, in agent_model
+    memory = prepare_data(dataloader, len(dataloader)*batch_size*dream_length)
+  File "/app/source/run_rl.py", line 277, in prepare_data
+    for itr, episodes in enumerate(dataloader):
+  File "/usr/local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/usr/local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/usr/local/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/usr/local/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/app/source/datasets/dreams_dataset.py", line 22, in __getitem__
+    dream = torch.load(dream_path)
+  File "/usr/local/lib/python3.10/site-packages/torch/serialization.py", line 777, in load
+    with _open_zipfile_reader(opened_file) as opened_zipfile:
+  File "/usr/local/lib/python3.10/site-packages/torch/serialization.py", line 282, in __init__
+    super(_open_zipfile_reader, self).__init__(torch._C.PyTorchFileReader(name_or_buffer))
+RuntimeError: PytorchStreamReader failed reading zip archive: failed finding central directory

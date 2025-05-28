@@ -1,0 +1,296 @@
+Rewarded action
+max_next_state_indices:  10
+next_action:  [0.0, 0.0, -0.1]
+pan  0.0
+tilt  0.0
+zoom  -0.1
+next_state_values:  tensor([[0.7373, 0.9583, 0.4442, 0.7191, 1.0078, 0.9325, 0.4933, 0.3615, 0.9539,
+         0.9389, 1.2155, 0.7153, 0.7786, 0.4088, 0.2751, 0.3871, 1.1519, 0.5147,
+         0.7744, 0.6038, 0.3260]], device='cuda:0')
+probs:  tensor([[0.0476, 0.0594, 0.0355, 0.0467, 0.0624, 0.0578, 0.0373, 0.0327, 0.0591,
+         0.0582, 0.0768, 0.0466, 0.0496, 0.0343, 0.0300, 0.0335, 0.0720, 0.0381,
+         0.0494, 0.0416, 0.0315]], device='cuda:0')
+Sampled action
+sampled_indices:  18
+next_action:  [5.0, 0.0, 0.0]
+pan  10.0
+tilt  0.0
+zoom  0.0
+next_state_values:  tensor([[0.6967, 0.9064, 0.3754, 0.6707, 0.9849, 0.8650, 0.4417, 0.3554, 0.8984,
+         0.8530, 1.1287, 0.6928, 0.7641, 0.3958, 0.2689, 0.4197, 1.0716, 0.4707,
+         0.7291, 0.5587, 0.3094]], device='cuda:0')
+probs:  INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'relative', 'action': 'control', 'Pan': -0.2, 'Tilt': 0.2, 'Zoom': 0.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=-0.2&Tilt=0.2&Zoom=0.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=-0.2&Tilt=0.2&Zoom=0.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=-0.2&Tilt=0.2&Zoom=0.0
+200
+OK
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.0013678073883057
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 390259
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'relative', 'action': 'control', 'Pan': 0.0, 'Tilt': 0.0, 'Zoom': 0.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0
+200
+OK
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.001371145248413
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 372391
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'relative', 'action': 'control', 'Pan': 0.0, 'Tilt': 0.0, 'Zoom': 0.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0
+200
+OK
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.0014421939849854
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 376056
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'relative', 'action': 'control', 'Pan': 0.0, 'Tilt': -0.2, 'Zoom': 0.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=-0.2&Zoom=0.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=-0.2&Zoom=0.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=-0.2&Zoom=0.0
+200
+OK
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.001396656036377
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 355977
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'relative', 'action': 'control', 'Pan': 0.0, 'Tilt': 0.0, 'Zoom': 0.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=relative&action=control&Pan=0.0&Tilt=0.0&Zoom=0.0
+200
+OK
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.001378059387207
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 374678
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'absolute', 'action': 'control', 'Pan': 294.0, 'Tilt': 20.0, 'Zoom': 1.0, 'ZoomPulse': None, 'Channel': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=absolute&action=control&Pan=294.0&Tilt=20.0&Zoom=1.0 HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=absolute&action=control&Pan=294.0&Tilt=20.0&Zoom=1.0 HTTP/1.1" 200 2
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/ptzcontrol.cgi?msubmenu=absolute&action=control&Pan=294.0&Tilt=20.0&Zoom=1.0
+200
+OK
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 134
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 132
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:Finished
+INFO:HANWHA_camera:elapsed_time: 1.902315616607666
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 136
+INFO:HANWHA_camera:camera_command({'msubmenu': 'snapshot', 'action': 'view'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/video.cgi?msubmenu=snapshot&action=view HTTP/1.1" 200 317792
+INFO:HANWHA_camera:http://130.202.23.92/stw-cgi/video.cgi?msubmenu=snapshot&action=view
+200
+
+INFO:HANWHA_camera:camera_command({'msubmenu': 'query', 'action': 'view', 'Query': 'Pan,Tilt,Zoom'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.92:80
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 401 347
+DEBUG:urllib3.connectionpool:http://130.202.23.92:80 "GET /stw-cgi/ptzcontrol.cgi?msubmenu=query&action=view&Query=Pan%2CTilt%2CZoom HTTP/1.1" 200 51
+tensor([[0.0478, 0.0589, 0.0347, 0.0466, 0.0638, 0.0566, 0.0370, 0.0340, 0.0585,
+         0.0559, 0.0736, 0.0476, 0.0511, 0.0354, 0.0312, 0.0362, 0.0695, 0.0381,
+         0.0494, 0.0416, 0.0325]], device='cuda:0')
+Sampled action
+sampled_indices:  3
+next_action:  [-0.1, 0.1, 0.0]
+pan  -0.2
+tilt  0.2
+zoom  0.0
+next_state_values:  tensor([[0.6964, 0.9087, 0.3778, 0.6718, 0.9856, 0.8672, 0.4436, 0.3565, 0.9004,
+         0.8544, 1.1303, 0.6928, 0.7657, 0.3965, 0.2690, 0.4181, 1.0743, 0.4721,
+         0.7307, 0.5606, 0.3098]], device='cuda:0')
+probs:  tensor([[0.0477, 0.0590, 0.0347, 0.0466, 0.0637, 0.0566, 0.0371, 0.0340, 0.0585,
+         0.0559, 0.0736, 0.0476, 0.0511, 0.0354, 0.0311, 0.0361, 0.0696, 0.0381,
+         0.0494, 0.0417, 0.0324]], device='cuda:0')
+Sampled action
+sampled_indices:  0
+next_action:  [0.0, 0.0, 0.0]
+pan  0.0
+tilt  0.0
+zoom  0.0
+next_state_values:  tensor([[0.6964, 0.9086, 0.3777, 0.6718, 0.9855, 0.8670, 0.4436, 0.3566, 0.9003,
+         0.8542, 1.1302, 0.6926, 0.7656, 0.3965, 0.2690, 0.4182, 1.0741, 0.4720,
+         0.7306, 0.5606, 0.3098]], device='cuda:0')
+probs:  tensor([[0.0477, 0.0590, 0.0347, 0.0466, 0.0637, 0.0566, 0.0371, 0.0340, 0.0585,
+         0.0559, 0.0736, 0.0475, 0.0511, 0.0354, 0.0311, 0.0361, 0.0696, 0.0381,
+         0.0494, 0.0417, 0.0324]], device='cuda:0')
+Rewarded action
+max_next_state_indices:  10
+next_action:  [0.0, 0.0, -0.1]
+pan  0.0
+tilt  0.0
+zoom  -0.1
+next_state_values:  tensor([[0.6964, 0.9086, 0.3777, 0.6718, 0.9856, 0.8669, 0.4438, 0.3566, 0.9004,
+         0.8541, 1.1302, 0.6925, 0.7655, 0.3965, 0.2691, 0.4183, 1.0741, 0.4719,
+         0.7306, 0.5605, 0.3098]], device='cuda:0')
+probs:  tensor([[0.0477, 0.0590, 0.0347, 0.0466, 0.0637, 0.0566, 0.0371, 0.0340, 0.0585,
+         0.0559, 0.0736, 0.0475, 0.0511, 0.0354, 0.0311, 0.0361, 0.0696, 0.0381,
+         0.0494, 0.0417, 0.0324]], device='cuda:0')
+Sampled action
+sampled_indices:  8
+next_action:  [0.0, -0.1, 0.0]
+pan  0.0
+tilt  -0.2
+zoom  0.0
+next_state_values:  tensor([[0.6978, 0.9084, 0.3770, 0.6723, 0.9850, 0.8663, 0.4431, 0.3562, 0.8998,
+         0.8542, 1.1300, 0.6927, 0.7642, 0.3963, 0.2690, 0.4193, 1.0722, 0.4718,
+         0.7298, 0.5600, 0.3098]], device='cuda:0')
+probs:  tensor([[0.0478, 0.0590, 0.0347, 0.0466, 0.0637, 0.0566, 0.0371, 0.0340, 0.0585,
+         0.0559, 0.0737, 0.0476, 0.0511, 0.0354, 0.0311, 0.0362, 0.0695, 0.0381,
+         0.0494, 0.0417, 0.0324]], device='cuda:0')
+Rewarded action
+max_next_state_indices:  10
+next_action:  [0.0, 0.0, -0.1]
+pan  0.0
+tilt  0.0
+zoom  -0.1
+Traceback (most recent call last):
+  File "/app/main.py", line 250, in <module>
+    main()
+  File "/app/main.py", line 238, in main
+    lifelong_learning(args)
+  File "/app/main.py", line 69, in lifelong_learning
+    interaction_complete = env_inter(arguments, arguments.fname, "navigate_env")
+  File "/app/source/env_interaction.py", line 482, in run
+    return control_ptz(args, params)
+  File "/app/source/env_interaction.py", line 272, in control_ptz
+    start_end_img_path, num_image = operate_ptz_with_agent(args, actions, target_encoder, transform, target_predictor, device)
+  File "/app/source/env_interaction.py", line 380, in operate_ptz_with_agent
+    positions = [grab_position(camera=Camera1, args=args)]
+  File "/app/source/prepare_dataset.py", line 187, in grab_position
+    position = camera.requesting_cameras_position_information()
+  File "/app/source/sunapi_control.py", line 490, in requesting_cameras_position_information
+    pan = float(resp.text.split()[0].split('=')[1])
+IndexError: list index out of range

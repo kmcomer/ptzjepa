@@ -1,0 +1,229 @@
+
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/jpg/image.cgi HTTP/1.1" 200 522421
+INFO:AXIS_camera:lap is 3092.1948105948954
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:36\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:36\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=178.09
+tilt=-67.56
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=178.09
+tilt=-67.56
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+INFO:AXIS_camera:camera_command({'rpan': -0.2, 'rtilt': -0.2, 'rzoom': 0.0, 'speed': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?rpan=-0.2&rtilt=-0.2&rzoom=0.0&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?rpan=-0.2&rtilt=-0.2&rzoom=0.0&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 204 0
+INFO:AXIS_camera:Finished
+INFO:AXIS_camera:elapsed_time: 0.048903703689575195
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801810 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=177.92
+tilt=-67.75
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/jpg/image.cgi HTTP/1.1" 200 522853
+INFO:AXIS_camera:lap is 3104.2637539164243
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:38\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:38\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801811 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801811 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=177.91
+tilt=-67.76
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=177.91
+tilt=-67.76
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+INFO:AXIS_camera:camera_command({'rpan': -10.0, 'rtilt': 0.0, 'rzoom': 0.0, 'speed': None})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?rpan=-10.0&rtilt=0.0&rzoom=0.0&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?rpan=-10.0&rtilt=0.0&rzoom=0.0&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 204 0
+INFO:AXIS_camera:Finished
+INFO:AXIS_camera:elapsed_time: 0.04552340507507324
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801812 HTTP/1.1" 200 91
+DEBUG:AXIS_camera:response text: pan=177.76
+tilt=-67.76
+zoom=163
+focus=4081
+brightness=5000
+autofocus=on
+autoiris=on
+
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/jpg/image.cgi HTTP/1.1" 200 525161
+INFO:AXIS_camera:lap is 3257.2231713651126
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:39\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 74 - value: b'AXIS\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 79 - value: b'Q6055-E\x00'
+DEBUG:PIL.TiffImagePlugin:tag: Software (305) - type: string (2) Tag Location: 46 - Data Location: 87 - value: b'8.40.59\x00'
+DEBUG:PIL.TiffImagePlugin:tag: DateTime (306) - type: string (2) Tag Location: 58 - Data Location: 95 - value: b'2025:05:21 06:49:39\x00'
+DEBUG:PIL.TiffImagePlugin:tag: ExifIFD (34665) - type: long (4) - value: b's\x00\x00\x00'
+INFO:AXIS_camera:camera_command({'query': 'position'})
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 130.202.23.91:80
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801813 HTTP/1.1" 401 381
+DEBUG:urllib3.connectionpool:http://130.202.23.91:80 "GET /axis-cgi/com/ptz.cgi?query=position&camera=1&html=no&timestamp=1747801813 HTTP/1.1" 200 47
+DEBUG:AXIS_camera:response text: Driver is initiating. Please try again later.
+
+tensor([[0.0433, 0.0367, 0.0574, 0.0396, 0.0735, 0.0505, 0.0325, 0.0333, 0.0572,
+         0.0324, 0.0512, 0.0480, 0.0409, 0.0465, 0.0459, 0.0458, 0.0493, 0.0474,
+         0.0682, 0.0441, 0.0563]], device='cuda:0')
+Sampled action
+sampled_indices:  0
+next_action:  [0.0, 0.0, 0.0]
+pan  0.0
+tilt  0.0
+zoom  0.0
+next_state_values:  tensor([[-0.0876, -0.2540,  0.1950, -0.1769,  0.4415,  0.0668, -0.3738, -0.3511,
+          0.1901, -0.3767,  0.0810,  0.0158, -0.1451, -0.0157, -0.0297, -0.0312,
+          0.0427,  0.0032,  0.3674, -0.0692,  0.1753]], device='cuda:0')
+probs:  tensor([[0.0433, 0.0367, 0.0574, 0.0396, 0.0735, 0.0505, 0.0325, 0.0333, 0.0571,
+         0.0324, 0.0512, 0.0480, 0.0409, 0.0465, 0.0459, 0.0458, 0.0493, 0.0474,
+         0.0682, 0.0441, 0.0563]], device='cuda:0')
+Sampled action
+sampled_indices:  15
+next_action:  [0.0, 0.0, 0.2]
+pan  0.0
+tilt  0.0
+zoom  20.0
+next_state_values:  tensor([[-0.0876, -0.2539,  0.1950, -0.1769,  0.4416,  0.0668, -0.3738, -0.3510,
+          0.1901, -0.3767,  0.0810,  0.0158, -0.1450, -0.0157, -0.0297, -0.0312,
+          0.0427,  0.0032,  0.3675, -0.0692,  0.1753]], device='cuda:0')
+probs:  tensor([[0.0433, 0.0367, 0.0574, 0.0396, 0.0735, 0.0505, 0.0325, 0.0333, 0.0571,
+         0.0324, 0.0512, 0.0480, 0.0409, 0.0465, 0.0459, 0.0458, 0.0493, 0.0474,
+         0.0682, 0.0441, 0.0563]], device='cuda:0')
+Sampled action
+sampled_indices:  16
+next_action:  [0.0, 0.0, -0.2]
+pan  0.0
+tilt  0.0
+zoom  -20.0
+next_state_values:  tensor([[ 0.3578,  0.1720,  0.4945, -0.0128, -0.1893,  0.1447,  0.1640,  0.0343,
+          0.0974,  0.3899,  0.2306,  0.2440,  0.1230,  0.1970,  0.3376,  0.3980,
+          0.1585,  0.2842, -0.4063,  0.2695,  0.1270]], device='cuda:0')
+probs:  tensor([[0.0563, 0.0467, 0.0645, 0.0389, 0.0326, 0.0455, 0.0464, 0.0407, 0.0434,
+         0.0581, 0.0496, 0.0502, 0.0445, 0.0479, 0.0552, 0.0586, 0.0461, 0.0523,
+         0.0262, 0.0515, 0.0447]], device='cuda:0')
+Sampled action
+sampled_indices:  11
+next_action:  [-1.0, 0.0, 0.0]
+pan  -2.0
+tilt  0.0
+zoom  0.0
+next_state_values:  tensor([[ 0.3973,  0.2026,  0.4970,  0.0118, -0.1834,  0.1508,  0.2078,  0.0425,
+          0.0939,  0.4065,  0.2345,  0.2671,  0.1312,  0.1987,  0.3462,  0.4126,
+          0.1697,  0.3000, -0.4164,  0.2780,  0.1416]], device='cuda:0')
+probs:  tensor([[0.0578, 0.0475, 0.0638, 0.0393, 0.0323, 0.0451, 0.0478, 0.0405, 0.0426,
+         0.0583, 0.0491, 0.0507, 0.0443, 0.0474, 0.0549, 0.0586, 0.0460, 0.0524,
+         0.0256, 0.0513, 0.0447]], device='cuda:0')
+Rewarded action
+max_next_state_indices:  2
+next_action:  [0.1, 0.0, 0.0]
+pan  0.2
+tilt  0.0
+zoom  0.0
+next_state_values:  tensor([[ 0.3968,  0.2013,  0.4980,  0.0116, -0.1810,  0.1509,  0.2067,  0.0416,
+          0.0949,  0.4049,  0.2342,  0.2673,  0.1303,  0.1987,  0.3460,  0.4121,
+          0.1696,  0.2996, -0.4136,  0.2769,  0.1419]], device='cuda:0')
+probs:  tensor([[0.0577, 0.0475, 0.0639, 0.0393, 0.0324, 0.0451, 0.0477, 0.0405, 0.0427,
+         0.0582, 0.0491, 0.0507, 0.0442, 0.0474, 0.0549, 0.0586, 0.0460, 0.0524,
+         0.0257, 0.0512, 0.0447]], device='cuda:0')
+Sampled action
+sampled_indices:  5
+next_action:  [-0.1, -0.1, 0.0]
+pan  -0.2
+tilt  -0.2
+zoom  0.0
+next_state_values:  tensor([[ 0.3974,  0.2015,  0.4980,  0.0118, -0.1805,  0.1508,  0.2069,  0.0410,
+          0.0947,  0.4046,  0.2344,  0.2675,  0.1300,  0.1987,  0.3461,  0.4123,
+          0.1698,  0.2998, -0.4138,  0.2768,  0.1420]], device='cuda:0')
+probs:  tensor([[0.0578, 0.0475, 0.0639, 0.0393, 0.0324, 0.0451, 0.0478, 0.0405, 0.0427,
+         0.0582, 0.0491, 0.0507, 0.0442, 0.0474, 0.0549, 0.0586, 0.0460, 0.0524,
+         0.0257, 0.0512, 0.0448]], device='cuda:0')
+Sampled action
+sampled_indices:  17
+next_action:  [-5.0, 0.0, 0.0]
+pan  -10.0
+tilt  0.0
+zoom  0.0
+Traceback (most recent call last):
+  File "/app/main.py", line 250, in <module>
+    main()
+  File "/app/main.py", line 238, in main
+    lifelong_learning(args)
+  File "/app/main.py", line 69, in lifelong_learning
+    interaction_complete = env_inter(arguments, arguments.fname, "navigate_env")
+  File "/app/source/env_interaction.py", line 494, in run
+    return control_ptz(args, params)
+  File "/app/source/env_interaction.py", line 284, in control_ptz
+    start_end_img_path, num_image = operate_ptz_with_agent(args, actions, target_encoder, transform, target_predictor, device)
+  File "/app/source/env_interaction.py", line 462, in operate_ptz_with_agent
+    positions.append(grab_position(camera=Camera1, args=args))
+  File "/app/source/prepare_dataset.py", line 189, in grab_position
+    position = camera.get_ptz()
+  File "/app/source/vapix_control.py", line 270, in get_ptz
+    pan = float(resp.text.split()[0].split('=')[1])
+IndexError: list index out of range

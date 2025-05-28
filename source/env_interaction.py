@@ -1,5 +1,4 @@
 # this python script runs jepa
-
 from pathlib import Path
 import time
 import datetime

@@ -23,6 +23,7 @@ RUN pip install h5py
 # Packages for playing video on screens
 RUN pip install -U fiftyone
 
+
 # fix numpy compatibility issue
 RUN pip install "numpy<2" 
 # native pyymal version is too old with the python

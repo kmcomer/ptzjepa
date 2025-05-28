@@ -144,7 +144,7 @@ redis:
   host: 130.202.23.67
   port: 6379
   password: your_strong_password
-  locker_expiration: 36000 # 10 hours
+  locker_expiration: 36000 # 10 hours 
 action:
   noop:
   - 0.0
